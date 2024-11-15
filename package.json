@@ -1,0 +1,27 @@
+{
+  "name": "tenzies",
+  "description": "https://v2.scrimba.com/learn-react-c0e/~05h",
+  "scripts": {
+    "watch": "webpack -w",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "i": "^0.3.7",
+    "nanoid": "3.1.28",
+    "react": "17.0.2",
+    "react-confetti": "6.0.1",
+    "react-dom": "17.0.2",
+    "Scrim-s01uajv": "file:",
+    "tenzies": "file:",
+    "Tenzies": "file:",
+    "webpack": "^2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.0",
+    "babel-loader": "^7.0",
+    "babel-preset-env": "*",
+    "babel-preset-react": "*",
+    "react-scripts": "^5.0.1"
+  }
+}
