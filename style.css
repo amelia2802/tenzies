@@ -139,3 +139,8 @@ main {
     transform: translate(18rem,-9rem);
     font-size: 18px;
 }
+
+.best-time{
+  position: absolute;
+  transform: translate(-18rem,-9rem);
+}

@@ -514,6 +514,17 @@ function App() {
         });
     }
 
+    _react2.default.useEffect(function () {
+        if (tenzies) {
+            // Get the current best time from localStorage
+            var bestTime = localStorage.getItem("bestTime");
+            if (!bestTime || time < Number(bestTime)) {
+                localStorage.setItem("bestTime", time); // Update best time
+            }
+        }
+    }, [tenzies, time]); // Trigger this effect when 'tenzies' or 'time' changes
+
+
     var diceElements = dice.map(function (die) {
         return _react2.default.createElement(_Die2.default, {
             key: die.id,
@@ -536,6 +547,13 @@ function App() {
             "h1",
             { className: "title" },
             "Tenzies"
+        ),
+        _react2.default.createElement(
+            "p",
+            { className: "best-time" },
+            "Best Time: ",
+            localStorage.getItem("bestTime") || 0,
+            "s"
         ),
         _react2.default.createElement(
             "div",

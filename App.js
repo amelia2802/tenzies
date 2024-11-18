@@ -8,7 +8,7 @@ export default function App() {
     const [tenzies, setTenzies] = React.useState(false);
     const [roll, setRoll] = React.useState(0);
     const [time,setTime] = React.useState(0);
-    const[isTimerRunning,setIsTimerRunning] = React.useState(true)
+    const [isTimerRunning,setIsTimerRunning] = React.useState(true)
 
     React.useEffect(() => {
         let timer;
@@ -67,6 +67,17 @@ export default function App() {
             return die.id === id ? { ...die, isHeld: !die.isHeld } : die;
         }));
     }
+
+    React.useEffect(() => {
+        if (tenzies) {
+            // Get the current best time from localStorage
+            const bestTime = localStorage.getItem("bestTime");
+            if (!bestTime || time < Number(bestTime)) {
+                localStorage.setItem("bestTime", time); // Update best time
+            }
+        }
+    }, [tenzies, time]); // Trigger this effect when 'tenzies' or 'time' changes
+    
     
     const diceElements = dice.map(die => (
         <Die 
@@ -87,6 +98,7 @@ export default function App() {
                 />
             }
             <h1 className="title">Tenzies</h1>
+            <p className="best-time">Best Time: {localStorage.getItem("bestTime") || 0}s</p>
             <div className="score-board">
                 <p className="roll">Roll: {roll}</p> |
                 <p className="time">Time: {time}s</p>
