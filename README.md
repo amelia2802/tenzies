@@ -1,3 +1,6 @@
+# Preview
+[18.11.2024 11_34.webm](https://github.com/user-attachments/assets/779e45e9-6148-4542-b781-f6ff4cfbac18)
+
 # Getting Started
 Install the dependencies and run the project in watch mode
 ```
